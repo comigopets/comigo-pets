@@ -70,7 +70,7 @@ body, html {
     position: relative;
     width: 100%;
     height: 50vh;
-    background-image: url('imagens/banner.jpg');
+    background-image: url('https://github.com/comigopets/comigo-pets/releases/download/imagens/banner.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -310,4 +310,5 @@ body, html {
         width: 100%;
         max-width: 320px;
     }
+
 }
