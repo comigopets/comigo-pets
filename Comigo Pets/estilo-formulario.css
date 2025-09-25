@@ -1,0 +1,136 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fefae0;
+  margin: 0;
+  padding: 0;
+}
+
+.container-formulario {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border: 2px solid #a8e6cf;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.container-formulario h1 {
+  color: #377d75;
+  margin-bottom: 10px;
+}
+
+.container-formulario p {
+  color: #444;
+  margin-bottom: 25px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #555;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+form button {
+  background-color: #a8e6cf;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+form button:hover {
+  background-color: #377d75;
+  transform: scale(1.05);
+}
+
+/***** MEDIA QUERIES RESPONSIVAS *****/
+
+/* --- Telas até 1024px --- */
+@media (max-width: 1024px) {
+  .container-formulario {
+    max-width: 80%;
+    margin: 60px auto;
+    padding: 35px;
+  }
+
+  .container-formulario h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* --- Telas até 768px --- */
+@media (max-width: 768px) {
+  body {
+    padding: 0 10px;
+  }
+
+  .container-formulario {
+    max-width: 95%;
+    margin: 50px auto;
+    padding: 30px;
+  }
+
+  .container-formulario h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .container-formulario p {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+/* --- Telas até 480px --- */
+@media (max-width: 480px) {
+  .container-formulario {
+    margin: 40px auto;
+    padding: 25px 15px;
+    border-width: 1px;
+  }
+
+  .container-formulario h1 {
+    font-size: 1.4rem;
+  }
+
+  .container-formulario p {
+    font-size: 0.95rem;
+  }
+
+  form label {
+    font-size: 0.9rem;
+  }
+
+  form input,
+  form textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  form button {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}

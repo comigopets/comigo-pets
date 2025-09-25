@@ -1,0 +1,302 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte e corpo */
+body, html {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    background-color: #fefae0;
+}
+
+/* HEADER */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #a8e6cf;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Botão hamburguer escondido por padrão */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #377d75;
+    cursor: pointer;
+}
+
+/* Logo */
+#logo img {
+    height: 60px;
+}
+
+/* Menu */
+#menu {
+    display: flex;
+    gap: 25px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #377d75; /* azul petróleo claro */
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#menu a:hover, .pagina-atual {
+    background-color: #fefae0; /* areia clara */
+}
+
+/* CONTEÚDO GERAL */
+.container {
+    max-width: 1100px;
+    margin: 120px auto 60px;
+    padding: 0 20px;
+}
+
+/* Seção Sobre */
+.sobre {
+    padding: 30px;
+    border-radius: 16px;
+    line-height: 1.7;
+    font-size: 1.05em;
+    text-align: justify;
+}
+
+.sobre strong {
+    color: #377d75;
+}
+
+/* Títulos principais */
+h1 {
+    font-size: 2.4em;
+    color: #256d85;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #377d75;
+    margin-bottom: 30px;
+}
+
+.nossas-acoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    border-radius: 15px;
+}
+
+.dado {
+    background-color: #ffffff;
+    border: 2px solid #a8e6cf;
+    border-radius: 12px;
+    padding: 30px 40px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    min-width: 180px;
+}
+
+.dado:hover {
+    transform: translateY(-5px);
+}
+
+.dado h3 {
+    color: #377d75;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.dado p {
+    font-size: 1.8em;
+    color: #256d85;
+    font-weight: bold;
+}
+
+/* Seção de Lembretes */
+.section {
+    padding: 30px 20px 60px;
+    background-color: #eafaf2;
+    border-radius: 16px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 2px solid #a8e6cf;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    font-size: 1.2em;
+    color: #256d85;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.95em;
+    color: #444;
+    line-height: 1.5;
+}
+
+.rodape {
+  text-align: center;
+  padding: 20px;
+  background: #a8e6cf;
+  color: #256d85;
+}
+.rodape a {
+  color: #256d85;
+  text-decoration: underline;
+}
+
+/***** MEDIA QUERIES RESPONSIVAS *****/
+
+/* 1) Tablets e telas médias (até 1024px) */
+@media (max-width: 1024px) {
+
+    /* Header */
+    #header {
+        padding: 10px 25px;
+    }
+
+    #menu a {
+        padding: 6px 10px;
+        font-size: 0.95rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.7em; }
+
+    .dado {
+        min-width: 150px;
+        padding: 25px 30px;
+    }
+}
+
+/* 2) Layout mobile padrão (até 768px) */
+@media (max-width: 768px) {
+
+    /* Header e menu */
+    #header {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+
+    #menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    #menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #a8e6cf;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    #menu.menu-aberto {
+        display: flex;
+    }
+
+    #menu a {
+        padding: 12px;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    /* Espaçamento do conteúdo por causa do header fixo */
+    .container {
+        margin-top: 180px;
+    }
+
+    /* Estatísticas em coluna */
+    .nossas-acoes {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+/* 3) Smartphones pequenos (até 480px) */
+@media (max-width: 480px) {
+
+    #menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    #menu {
+        display: none;
+        flex-direction: column;
+        background: #a8e6cf;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    #menu.menu-aberto {
+        display: flex;
+    }
+
+    #header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    h1 { font-size: 1.6em; }
+    h2 { font-size: 1.4em; }
+
+    .sobre {
+        padding: 20px;
+        font-size: 1em;
+    }
+
+    .card h3 { font-size: 1.1em; }
+    .card p  { font-size: 0.9em; }
+}

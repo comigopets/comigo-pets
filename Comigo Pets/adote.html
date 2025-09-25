@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adote um Pet</title>
+    <link rel="stylesheet" href="estilo-adote.css">
+</head>
+<body>
+    
+    <!-- MENU -->
+    <div id="header">
+
+        <div id="logo">
+            <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                ☰
+            </button>
+
+            <img src="imagens/Logo.png" alt="Logo">
+        </div>
+        <div id="menu">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="adote.html" class="pagina-atual">Adote</a>
+            <a href="adotados.html">Adotados</a>
+            <a href="doe.html">Doe</a>
+            <a href="contato.html">Contato</a>
+        </div>
+    </div>
+
+    <div id="banner">
+            <h2>Veja mais informações antes de adotar.</h2>
+            <p>Saiba como se preparar para receber um novo amigo com responsabilidade e cuidado.</p>
+            <a href="conscientizacao.html" class="botao-banner">Clique aqui</a>
+        </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section id="animais" class="section">
+        <h2>Animais para Adoção</h2>
+        <p>Conheça nossos amiguinhos que estão em busca de um lar cheio de amor!</p>
+
+        <div class="filtros">
+            <button class="filtro ativo" onclick="filtrarPets('todos', this)">Todos</button>
+            <button class="filtro" onclick="filtrarPets('cachorro', this)">Cachorros</button>
+            <button class="filtro" onclick="filtrarPets('gato', this)">Gatos</button>
+        </div>
+
+        <div id="pets-container" class="cards-container"></div>
+
+    </section>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/firebase.js"></script>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-nome" tabindex="-1">
+
+        <div class="modal-content">
+            <span class="modal-close" onclick="fecharModal()">&times;</span>
+            <img id="modal-img" src="" alt="Pet">
+            <h3 id="modal-nome"></h3>
+
+            <div class="modal-info">
+                <p id="modal-idade"></p>
+                <p id="modal-sexo"></p>
+                <p id="modal-tipo"></p>
+                <p id="modal-raca"></p>
+                <p id="modal-vacinado"></p>
+                <p id="modal-vermifugado"></p>
+                <p id="modal-personalidade"></p>
+                <a id="btn-adotar" class="btn-adotar">Adotar</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <p>&copy; 2025 Comigo Pets! |
+            <a href="privacidade.html">Política de Privacidade</a>
+        </p>
+    </footer>
+
+    <script>
+        const btnToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        btnToggle.addEventListener('click', () => {
+            menu.classList.toggle('menu-aberto');
+
+            const aberto = menu.classList.contains('menu-aberto');
+            btnToggle.setAttribute('aria-expanded', aberto);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comigo Pets!</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <!-- MENU -->
+    <div id="header">
+
+        <div id="logo">
+            <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                ☰
+            </button>
+
+            <img src="imagens/Logo.png" alt="Logo">
+        </div>
+        <div id="menu">
+            <a href="index.html" class="pagina-atual">Início</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="adote.html">Adote</a>
+            <a href="adotados.html">Adotados</a>
+            <a href="doe.html">Doe</a>
+            <a href="contato.html">Contato</a>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div id="content">
+
+        <div id="banner">
+            <h2>Adotar é acolher e ganhar um grande amigo.</h2>
+            <p>O Instituto Comigo Pets! procura sempre ajudar os pequeninos que foram resgatados das ruas e estão procurando um lar para viver. Nos ajude nessa jornada!</p>
+            <a href="adote.html" class="botao-banner">Adote agora</a>
+        </div>
+
+        <div id="opcoes">
+
+            <div class="adocao">
+                <h2>Adote!</h2>
+                <p>Adotar um animal é um ato de amor e responsabilidade que transforma vidas. Ao adotar, você oferece carinho, proteção e dignidade a um ser que só quer amar e ser amado.</p>
+            </div>
+
+            <div class="doacao">
+                <h2>Doe!</h2>
+                <p>Doar é uma forma concreta de ajudar a salvar vidas. Com sua doação, mesmo que pequena, você contribui para que mais animais recebam o cuidado e o amor que merecem.</p>
+            </div>
+
+            <div class="resgate">
+                <h2>Resgatou um pequenino?</h2>
+                <p>Se você resgatou um animal em situação de risco, saiba que não está sozinho nessa missão. Entre em contato conosco para ajudarmos este pequenino a encontrar um lar e carinho.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <p>&copy; 2025 Comigo Pets! |
+            <a href="privacidade.html">Política de Privacidade</a>
+        </p>
+    </footer>
+
+    <script>
+        const btnToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        btnToggle.addEventListener('click', () => {
+            menu.classList.toggle('menu-aberto');
+
+            const aberto = menu.classList.contains('menu-aberto');
+            btnToggle.setAttribute('aria-expanded', aberto);
+        });
+    </script>
+
+</body>
+</html>
