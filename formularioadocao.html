@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Adoção</title>
+  <link rel="stylesheet" href="estilo-formulario.css">
+</head>
+<body>
+
+    <div class="container-formulario">
+        <h1>Formulário de Interesse em Adoção</h1>
+        <p>Preencha seus dados e entraremos em contato com você!</p>
+
+        <form action="https://formsubmit.co/logo-comigo-pets@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://comigopets.github.io/comigo-pets/obrigado.html">
+            <input type="hidden" name="_captcha" value="false">
+            
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <label for="animal">Nome do Pet que deseja adotar:</label>
+            <input type="text" id="animal" name="animal" required>
+
+            <label for="mensagem">Por que você quer adotar esse pet?</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+            <button type="submit">Enviar Interesse</button>
+
+        </form>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const animal = urlParams.get("animal");
+
+        if (animal) {
+            document.getElementById("animal").value = animal;
+        }
+    </script>
+
+</body>
+</html>

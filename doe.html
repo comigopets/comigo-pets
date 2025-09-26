@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doe</title>
+    <link rel="stylesheet" href="estilo-doe.css">
+</head>
+<body>
+    
+    <!-- MENU -->
+    <div id="header">
+
+        <div id="logo">
+            <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                ☰
+            </button>
+
+            <img src="https://github.com/comigopets/comigo-pets/releases/download/imagens/Logo.png" alt="Logo">
+        </div>
+        <div id="menu">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="adote.html">Adote</a>
+            <a href="adotados.html">Adotados</a>
+            <a href="doe.html" class="pagina-atual">Doe</a>
+            <a href="contato.html">Contato</a>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div id="content">
+        <div class="doacao-info">
+            <h2>Nos ajude a transformar vidas!</h2>
+            <p>Suas doações ajudam a resgatar, alimentar e cuidar de nossos animais.</p>
+
+            <!-- PIX -->
+            <div class="pix-box">
+                <h3>🐾 Doação via Pix</h3>
+
+                <!-- QR Code -->
+                <div class="pix-qr">
+                    <img src="https://github.com/comigopets/comigo-pets/releases/download/imagens/qrcode-pix.png" alt="QR Code Pix" width="300">
+                </div>
+
+                <!-- Botão p/ copiar chave pix -->
+                <button class="botao-doacao" data-chave="0194847f-c4c6-40d3-9ac9-96d3df06b903">Copiar chave Pix</button>
+                <p id="msg-copiado" class="oculto">Chave copiada! ✅</p>
+            </div>
+
+            <!-- MERCADO PAGO -->
+            <div class="mp-box">
+                <h3>💳 Doação Online (Pix, Cartão, Boleto)</h3>
+                <p>Clique no botão abaixo e escolha a melhor forma de doar:</p>
+                <a class="botao-doacao" href="link.mercadopago.com.br/comigopets" target="_blank">Doe Agora</a>
+            </div>
+        </div>
+
+        <div class="mascote">
+            <img src="https://github.com/comigopets/comigo-pets/releases/download/imagens/mascote.png" alt="Mascote Comigo Pets">
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <p>&copy; 2025 Comigo Pets! |
+            <a href="privacidade.html">Política de Privacidade</a>
+        </p>
+    </footer>
+
+    <script>
+        const btnToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        btnToggle.addEventListener('click', () => {
+            menu.classList.toggle('menu-aberto');
+
+            const aberto = menu.classList.contains('menu-aberto');
+            btnToggle.setAttribute('aria-expanded', aberto);
+        });
+
+        document.getElementById('copiar-pix').addEventListener('click', function () {
+            const chavePix = this.dataset.chave;
+            navigator.clipboard.writeText(chavePix).then(() => {
+                const msg = document.getElementById('msg-copiado');
+                msg.classList.remove('oculto');
+                setTimeout(() => msg.classList.add('oculto'), 2000);
+            }).catch(err => console.error('Erro ao copiar: ', err));
+        });
+
+    </script>
+
+</body>
+
+</html>
